@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Ultra Fabrication</title>
+  <meta name="description" content="Steel beams, welding, metal work and full installation services. Ultra Fabrication deliver precision steel fabrication across Yorkshire and the North of England."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .services-full-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .svc-full-card {
+      background: var(--dark);
+      padding: 3.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .svc-full-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .svc-full-card:hover { background: var(--panel); }
+    .svc-full-card:hover::after { transform: scaleX(1); }
+
+    .svc-full-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 4.5rem;
+      color: var(--border-mid);
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      transition: color 0.3s;
+    }
+
+    .svc-full-card:hover .svc-full-num { color: var(--blue-dim); }
+
+    .svc-full-icon {
+      width: 52px; height: 52px;
+      background: var(--blue-dim);
+      border: 1px solid rgba(74,143,196,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+      margin-bottom: 1.5rem;
+      transition: background 0.3s;
+    }
+
+    .svc-full-card:hover .svc-full-icon { background: rgba(74,143,196,0.2); }
+    .svc-full-icon svg { width: 24px; height: 24px; stroke: var(--blue-bright); fill: none; stroke-width: 1.5; }
+
+    .svc-full-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .svc-full-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .svc-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .svc-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .svc-bullets li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--blue);
+      clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+      flex-shrink: 0;
+    }
+
+    /* wide card (span 2) */
+    .svc-full-card.wide {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .wide-left .svc-full-num { margin-bottom: 0.5rem; }
+
+    /* Process strip */
+    .process-section {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      background: var(--panel);
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .process-step-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      color: var(--blue-dim);
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .process-step-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .process-step-text {
+      font-size: 0.84rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--blue);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .process-step:hover::before { opacity: 1; }
+
+    @media (max-width: 900px) {
+      .services-full-grid { grid-template-columns: 1fr; }
+      .svc-full-card.wide { grid-column: span 1; grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.ultrafabrication.co.uk"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://www.ultrafabrication.co.uk/services"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Steel Fabrication",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Ultra Fabrication - Steel Beams York",
+      "url": "https://www.ultrafabrication.co.uk",
+      "telephone": "+447972089013",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "York",
+        "addressRegion": "Yorkshire",
+        "addressCountry": "GB"
+      }
+    },
+    "areaServed": "Yorkshire",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Steel Fabrication Services",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Steel Beams and Lintels"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Welding Services"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Metal Work and Installation"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Structural Steel Work"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Bespoke Steel Design"}}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<header id="hdr">
+  <nav>
+    <a href="index.html" class="logo-wrap">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+        <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+        <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+        <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+        <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+        <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-ultra">ULTRA</span>
+        <span class="logo-fab">FABRICATION</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-line"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Services</div>
+    <h1 class="page-h1">Our <span>Services</span></h1>
+    <p class="page-sub">From structural steel beams to bespoke metalwork and full installation, we cover every aspect of steel fabrication for residential and commercial projects across Yorkshire.</p>
+  </div>
+</div>
+
+<!-- SERVICES GRID -->
+<div>
+  <div class="section-wrap" style="padding-bottom: 0;">
+    <p class="eyebrow reveal">What We Offer</p>
+    <h2 class="section-h2 reveal d1">Full Range of<br>Fabrication Services</h2>
+  </div>
+  <div class="services-full-grid">
+    <div class="svc-full-card reveal">
+      <div class="svc-full-num">01</div>
+      <div class="svc-full-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="4"/><line x1="6" y1="12" x2="6" y2="20"/><line x1="18" y1="12" x2="18" y2="20"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+      </div>
+      <div class="svc-full-name">Steel Beams and Lintels</div>
+      <p class="svc-full-desc">Whatever beam, lintel or supporting bracket you need, we can supply and fit it. We offer full installation services including site welding, cutting, drilling and painting. Steel beams delivered to your door or installed on site by our experienced team.</p>
+      <ul class="svc-bullets">
+        <li>Universal Beams (UB)</li>
+        <li>Universal Columns (UC)</li>
+        <li>Lintels and padstones</li>
+        <li>Supporting brackets and plates</li>
+        <li>Cut to length service</li>
+        <li>Crane delivery available</li>
+      </ul>
+    </div>
+
+    <div class="svc-full-card reveal d1">
+      <div class="svc-full-num">02</div>
+      <div class="svc-full-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="svc-full-name">Welding Services</div>
+      <p class="svc-full-desc">Specialised welding services to exceptional standards, carried out by a fully coded welder. We offer both MIG and MMA welding, available onsite or from our workshop. We can travel wherever is needed and will supply power for mobile welding jobs.</p>
+      <ul class="svc-bullets">
+        <li>MIG welding</li>
+        <li>MMA (stick) welding</li>
+        <li>Coded welder certified</li>
+        <li>Mobile onsite welding</li>
+        <li>Workshop welding</li>
+        <li>Structural and architectural welds</li>
+      </ul>
+    </div>
+
+    <div class="svc-full-card reveal">
+      <div class="svc-full-num">03</div>
+      <div class="svc-full-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+      </div>
+      <div class="svc-full-name">Metal Work and Installation</div>
+      <p class="svc-full-desc">Any type of metal work including cutting, drilling and shaping. We offer a full installation service and always lend a hand on site. We understand that lifting steel beams can be tough, so we provide full on-site assistance throughout.</p>
+      <ul class="svc-bullets">
+        <li>Cutting and drilling</li>
+        <li>Painting and priming</li>
+        <li>Shot blasting</li>
+        <li>Galvanizing and powder coating</li>
+        <li>Full on-site installation</li>
+        <li>Steel delivery to door step</li>
+      </ul>
+    </div>
+
+    <div class="svc-full-card reveal d1">
+      <div class="svc-full-num">04</div>
+      <div class="svc-full-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="svc-full-name">Structural Steel Work</div>
+      <p class="svc-full-desc">Full structural steelwork for residential and commercial projects. From mezzanine floors and platforms to access stairs and fencing, we fabricate and install structural steel solutions built to last.</p>
+      <ul class="svc-bullets">
+        <li>Mezzanine floors</li>
+        <li>Platforms and walkways</li>
+        <li>Access stairs</li>
+        <li>Fencing and gates</li>
+        <li>Ladders</li>
+        <li>Bespoke structural designs</li>
+      </ul>
+    </div>
+
+    <div class="svc-full-card wide reveal">
+      <div class="wide-left">
+        <div class="svc-full-num">05</div>
+        <div class="svc-full-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="svc-full-name">Bespoke Designs</div>
+        <p class="svc-full-desc">Got something unusual or non-standard? We specialise in bespoke steel fabrication, working closely with you to design and manufacture exactly what your project requires. From complicated curved beams to custom brackets, if you can describe it we can build it.</p>
+      </div>
+      <div>
+        <ul class="svc-bullets" style="margin-top: 0; padding-top: 0; border-top: none;">
+          <li>Custom curved and shaped beams</li>
+          <li>Non-standard sections and profiles</li>
+          <li>Bespoke bracket and plate fabrication</li>
+          <li>Architectural metalwork</li>
+          <li>Design consultation included</li>
+          <li>Workshop and onsite capability</li>
+          <li>Personal relationship with clients throughout</li>
+          <li>Adjustments handled as the project develops</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="process-section">
+  <div class="section-wrap">
+    <p class="eyebrow reveal">How It Works</p>
+    <h2 class="section-h2 reveal d1">Simple Process,<br>Reliable Results</h2>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">Get in Touch</div>
+        <p class="process-step-text">Call Ryan on 07972 089 013 or email us. You will get straight-talking advice and a free quote with no obligation.</p>
+      </div>
+      <div class="process-step reveal d1">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">Quote and Design</div>
+        <p class="process-step-text">We assess your requirements, provide a competitive quote and confirm all specifications before any work begins.</p>
+      </div>
+      <div class="process-step reveal d2">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">Fabrication</div>
+        <p class="process-step-text">Your steel is fabricated in our Yorkshire workshop to your exact specification, with quality checked at every stage.</p>
+      </div>
+      <div class="process-step reveal d3">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">Delivery and Installation</div>
+        <p class="process-step-text">We deliver to your site and provide full installation. Crane delivery available for larger beams. Job done right, first time.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2 class="cta-title reveal">Not Sure What<br><span>You Need?</span></h2>
+      <p class="cta-sub reveal d1">Call Ryan for free, friendly advice. We will work out exactly what your project requires and give you a competitive quote.</p>
+    </div>
+    <div class="cta-right reveal d2">
+      <a href="tel:07972089013" class="cta-tel">07972 089 013</a>
+      <a href="contact.html" class="btn-primary">Send an Enquiry</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="display:inline-flex;">
+          <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+            <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+            <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+            <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+            <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+            <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+            <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+          </svg>
+          <div class="logo-text-wrap">
+            <span class="logo-ultra">ULTRA</span>
+            <span class="logo-fab">FABRICATION</span>
+          </div>
+        </a>
+        <p class="footer-about-text">Yorkshire-based steel fabrication specialists delivering structural steel, expert welding and bespoke metalwork across the North of England.</p>
+      </div>
+      <div>
+        <p class="footer-col-head">Navigate</p>
+        <ul class="footer-col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Services</p>
+        <ul class="footer-col-links">
+          <li><a href="services.html">Steel Beams</a></li>
+          <li><a href="services.html">Welding</a></li>
+          <li><a href="services.html">Metal Work</a></li>
+          <li><a href="services.html">Installation</a></li>
+          <li><a href="services.html">Bespoke Designs</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Contact</p>
+        <ul class="footer-col-links">
+          <li><a href="tel:07972089013">07972 089 013</a></li>
+          <li><a href="tel:01904891404">01904 891 404</a></li>
+          <li><a href="mailto:ultra-fabrication@outlook.com">ultra-fabrication@outlook.com</a></li>
+          <li><a href="contact.html">Bell Farm Stead, Escrick, York</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Ultra Fabrication</span>. All rights reserved.</p>
+      <a href="https://instagram.com/ultrafabrication" class="footer-ig" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

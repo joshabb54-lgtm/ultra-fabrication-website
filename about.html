@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Ultra Fabrication</title>
+  <meta name="description" content="Steel fabrication specialists based in Yorkshire. Specialising in structural steel supports, welding, metal work and installation across the North of England."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ─── ABOUT-SPECIFIC ─── */
+    .about-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-lead {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--white);
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .about-body {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Services list panel */
+    .services-panel {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      position: sticky;
+      top: 100px;
+    }
+
+    .services-panel-head {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services-panel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .services-panel-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
+    .services-panel-list li:last-child { border-bottom: none; }
+    .services-panel-list li:hover { color: var(--blue-bright); }
+
+    .services-panel-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--blue);
+      clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+      flex-shrink: 0;
+    }
+
+    /* Safety section */
+    .safety-section {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .safety-body {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text);
+    }
+
+    .safety-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+    }
+
+    .safety-card {
+      background: var(--panel);
+      padding: 2rem 1.8rem;
+      position: relative;
+    }
+
+    .safety-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 2px; height: 100%;
+      background: var(--blue);
+      opacity: 0.5;
+    }
+
+    .safety-card-icon {
+      width: 40px; height: 40px;
+      background: var(--blue-dim);
+      border: 1px solid rgba(74,143,196,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);
+      margin-bottom: 1rem;
+    }
+
+    .safety-card-icon svg { width: 18px; height: 18px; stroke: var(--blue); fill: none; stroke-width: 1.5; }
+
+    .safety-card-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .safety-card-text {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .about-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-panel { position: static; }
+      .safety-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .safety-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.ultrafabrication.co.uk"},
+      {"@type":"ListItem","position":2,"name":"About","item":"https://www.ultrafabrication.co.uk/about"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <nav>
+    <a href="index.html" class="logo-wrap">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+        <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+        <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+        <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+        <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+        <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-ultra">ULTRA</span>
+        <span class="logo-fab">FABRICATION</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-line"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      About
+    </div>
+    <h1 class="page-h1">Get to Know<br><span>Ultra Fabrication</span></h1>
+    <p class="page-sub">We design and fabricate what you need. A leading provider of steel fabrication services based in Yorkshire, dedicated to quality, speed and cost-effective solutions.</p>
+  </div>
+</div>
+
+<!-- ABOUT INTRO -->
+<div>
+  <div class="section-wrap">
+    <div class="about-intro-grid">
+      <div>
+        <p class="eyebrow reveal">Who We Are</p>
+        <p class="about-lead reveal d1">Steel fabricators specialising in structural steel supports, with over 10 years supplying customers across the North of England.</p>
+        <p class="about-body reveal d2">Ultra Fabrication is a leading provider of steel fabrication services. We specialise in manufacturing high-quality steel beams for various industries, from residential new builds to large commercial projects. Our team is dedicated to customer satisfaction and delivering cost-effective solutions that do not compromise on quality.</p>
+        <p class="about-body reveal d2">With a friendly and experienced staff, we ensure a fast turnaround time on all projects. Our priority is customer satisfaction and we strive to maintain a high quality of work, fast turnaround and remain cost efficient on every single job we take on.</p>
+        <p class="about-body reveal d2">Based at Bell Farm Stead, Escrick, York, we operate across Yorkshire and the wider North of England, offering both workshop fabrication and full onsite installation services.</p>
+        <div class="reveal d3" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="contact.html" class="btn-primary">Get a Quote</a>
+          <a href="services.html" class="btn-outline">Our Services</a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="services-panel">
+          <div class="services-panel-head">Full Range of Services</div>
+          <ul class="services-panel-list">
+            <li>Structural Steel Work</li>
+            <li>On-site Fitting and Steel Erecting</li>
+            <li>Access Stairs</li>
+            <li>Mezzanine Floors</li>
+            <li>Platforms</li>
+            <li>Fencing and Gates</li>
+            <li>Ladders</li>
+            <li>Welding Services (MIG and MMA)</li>
+            <li>Galvanizing and Powder Coating</li>
+            <li>Shot Blasting and Painting</li>
+            <li>Bespoke Designs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SAFETY -->
+<div class="safety-section">
+  <div class="section-wrap">
+    <div class="safety-grid">
+      <div>
+        <p class="eyebrow reveal">Health and Safety</p>
+        <h2 class="section-h2 reveal d1">Compliance You<br>Can Rely On</h2>
+        <p class="safety-body reveal d2">The management of Ultra Fabrication monitors compliance with all legislation relevant to the company's activities, including the Health and Safety at Work Act 1974. In addition, the company's quality performance is constantly scrutinised and improvements to the quality management system implemented when appropriate. Safety is never an afterthought on any project we undertake.</p>
+      </div>
+      <div class="safety-cards reveal d2">
+        <div class="safety-card">
+          <div class="safety-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="safety-card-title">Health and Safety Act 1974</div>
+          <p class="safety-card-text">Full compliance with all relevant workplace health and safety legislation on every project.</p>
+        </div>
+        <div class="safety-card">
+          <div class="safety-card-icon">
+            <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="safety-card-title">Quality Management</div>
+          <p class="safety-card-text">Ongoing scrutiny of quality performance with continuous improvement built into our process.</p>
+        </div>
+        <div class="safety-card">
+          <div class="safety-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="safety-card-title">Coded Welder</div>
+          <p class="safety-card-text">All welding carried out by a fully coded welder to industry-standard accreditation.</p>
+        </div>
+        <div class="safety-card">
+          <div class="safety-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="safety-card-title">Experienced Team</div>
+          <p class="safety-card-text">A professional team with years of hands-on experience across all areas of steel fabrication.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2 class="cta-title reveal">Ready to Discuss<br><span>Your Project?</span></h2>
+      <p class="cta-sub reveal d1">Call Ryan directly for free, friendly advice. No obligation, no jargon.</p>
+    </div>
+    <div class="cta-right reveal d2">
+      <a href="tel:07972089013" class="cta-tel">07972 089 013</a>
+      <a href="contact.html" class="btn-primary">Send an Enquiry</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="display:inline-flex;">
+          <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+            <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+            <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+            <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+            <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+            <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+            <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+          </svg>
+          <div class="logo-text-wrap">
+            <span class="logo-ultra">ULTRA</span>
+            <span class="logo-fab">FABRICATION</span>
+          </div>
+        </a>
+        <p class="footer-about-text">Yorkshire-based steel fabrication specialists delivering structural steel, expert welding and bespoke metalwork across the North of England.</p>
+      </div>
+      <div>
+        <p class="footer-col-head">Navigate</p>
+        <ul class="footer-col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Services</p>
+        <ul class="footer-col-links">
+          <li><a href="services.html">Steel Beams</a></li>
+          <li><a href="services.html">Welding</a></li>
+          <li><a href="services.html">Metal Work</a></li>
+          <li><a href="services.html">Installation</a></li>
+          <li><a href="services.html">Bespoke Designs</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Contact</p>
+        <ul class="footer-col-links">
+          <li><a href="tel:07972089013">07972 089 013</a></li>
+          <li><a href="tel:01904891404">01904 891 404</a></li>
+          <li><a href="mailto:ultra-fabrication@outlook.com">ultra-fabrication@outlook.com</a></li>
+          <li><a href="contact.html">Bell Farm Stead, Escrick, York</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Ultra Fabrication</span>. All rights reserved.</p>
+      <a href="https://instagram.com/ultrafabrication" class="footer-ig" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
