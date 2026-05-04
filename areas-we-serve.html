@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Areas We Serve | Steel Fabrication Across York and Yorkshire</title>
+  <meta name="description" content="Ultra Fabrication serve York, Selby, Tadcaster, Harrogate, Pocklington and Wetherby with steel beams, welding and metal work. Based in Escrick, York."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+    .area-card {
+      background: var(--dark);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: block;
+    }
+    .area-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .area-card:hover { background: var(--panel); }
+    .area-card:hover::after { transform: scaleX(1); }
+    .area-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: var(--border-mid);
+      line-height: 1;
+      margin-bottom: 1rem;
+      transition: color 0.3s;
+    }
+    .area-card:hover .area-num { color: var(--blue-dim); }
+    .area-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .area-dist {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.8rem;
+    }
+    .area-desc { font-size: 0.875rem; line-height: 1.7; color: var(--muted); }
+    .area-arrow {
+      position: absolute;
+      bottom: 2rem; right: 2rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.2rem;
+      color: var(--muted);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .area-card:hover .area-arrow { color: var(--blue); transform: translate(4px, -4px); }
+    .services-strip {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .services-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+    .svc-mini {
+      background: var(--panel);
+      padding: 1.8rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .svc-mini:hover { background: var(--dark); }
+    .svc-mini-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .svc-mini-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    @media (max-width: 900px) {
+      .areas-grid { grid-template-columns: 1fr 1fr; }
+      .services-mini-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .areas-grid { grid-template-columns: 1fr; }
+      .services-mini-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header id="hdr">
+  <nav>
+    <a href="index.html" class="logo-wrap">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+        <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+        <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+        <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+        <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+        <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <div class="logo-text-wrap"><span class="logo-ultra">ULTRA</span><span class="logo-fab">FABRICATION</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="areas-we-serve.html" class="active">Areas</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-line"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Areas We Serve</div>
+    <h1 class="page-h1">Areas We <span>Serve</span></h1>
+    <p class="page-sub">Based in Escrick, York, we cover a wide area across Yorkshire and the North of England. Select your area below to find out more about how we can help with your steel project.</p>
+  </div>
+</div>
+
+<div>
+  <div class="section-wrap">
+    <p class="eyebrow reveal">Coverage</p>
+    <h2 class="section-h2 reveal d1">Steel Fabrication Across<br>York and Yorkshire</h2>
+    <p class="reveal d2" style="font-size:0.95rem;line-height:1.8;color:var(--text);max-width:700px;">Our workshop is at Bell Farm Stead, Escrick, York YO19 6ED. From here we serve a wide area across Yorkshire and the North of England, covering both residential and commercial steel fabrication projects. Click on your area below to find out more.</p>
+    <div class="areas-grid">
+      <a href="steel-fabrication-york.html" class="area-card reveal">
+        <div class="area-num">01</div>
+        <div class="area-name">York</div>
+        <div class="area-dist">~6 miles from workshop</div>
+        <p class="area-desc">Our primary service area. We cover all of York including the city centre, inner suburbs and surrounding villages.</p>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-selby.html" class="area-card reveal d1">
+        <div class="area-num">02</div>
+        <div class="area-name">Selby</div>
+        <div class="area-dist">~10 miles from workshop</div>
+        <p class="area-desc">Structural steel and metalwork for Selby and the surrounding Vale of York including residential, commercial and agricultural projects.</p>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-tadcaster.html" class="area-card reveal d2">
+        <div class="area-num">03</div>
+        <div class="area-name">Tadcaster</div>
+        <div class="area-dist">~15 miles from workshop</div>
+        <p class="area-desc">Steel beams, welding and metal work for Tadcaster and the Wharfe Valley including surrounding villages.</p>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-harrogate.html" class="area-card reveal">
+        <div class="area-num">04</div>
+        <div class="area-name">Harrogate</div>
+        <div class="area-dist">~22 miles from workshop</div>
+        <p class="area-desc">Premium steel fabrication for Harrogate, Knaresborough and Ripon. Specialist in bespoke metalwork for high-value properties.</p>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-pocklington.html" class="area-card reveal d1">
+        <div class="area-num">05</div>
+        <div class="area-name">Pocklington</div>
+        <div class="area-dist">~16 miles from workshop</div>
+        <p class="area-desc">Covering Pocklington, Market Weighton and the East Yorkshire Wolds for residential, commercial and agricultural steel work.</p>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-wetherby.html" class="area-card reveal d2">
+        <div class="area-num">06</div>
+        <div class="area-name">Wetherby</div>
+        <div class="area-dist">~20 miles from workshop</div>
+        <p class="area-desc">Serving Wetherby, Boston Spa and Collingham along the A1 corridor between York and Leeds.</p>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="services-strip">
+  <div class="section-wrap">
+    <p class="eyebrow reveal">What We Offer</p>
+    <h2 class="section-h2 reveal d1">Services Available<br>Across All Areas</h2>
+    <div class="services-mini-grid">
+      <a href="steel-beams-york.html" class="svc-mini reveal">
+        <div class="svc-mini-name">Steel Beams</div>
+        <p class="svc-mini-desc">Supply and installation of structural beams and lintels across Yorkshire.</p>
+      </a>
+      <a href="welding-york.html" class="svc-mini reveal d1">
+        <div class="svc-mini-name">Welding</div>
+        <p class="svc-mini-desc">MIG and MMA welding by a fully coded welder. Mobile and workshop service.</p>
+      </a>
+      <a href="metal-work-installation-york.html" class="svc-mini reveal d2">
+        <div class="svc-mini-name">Metal Work</div>
+        <p class="svc-mini-desc">Cutting, drilling, painting, shot blasting and full on-site installation.</p>
+      </a>
+      <a href="structural-steel-york.html" class="svc-mini reveal d3">
+        <div class="svc-mini-name">Structural Steel</div>
+        <p class="svc-mini-desc">Mezzanine floors, platforms, access stairs, fencing and frames.</p>
+      </a>
+      <a href="bespoke-steel-fabrication-york.html" class="svc-mini reveal d4">
+        <div class="svc-mini-name">Bespoke</div>
+        <p class="svc-mini-desc">Non-standard and architectural steel fabrication. Curved beams and custom designs.</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2 class="cta-title reveal">Not Sure If We<br><span>Cover Your Area?</span></h2>
+      <p class="cta-sub reveal d1">Call Ryan on 07972 089 013. If we can get to you, we will. We cover a wide area across Yorkshire and the North of England.</p>
+    </div>
+    <div class="cta-right reveal d2">
+      <a href="tel:07972089013" class="cta-tel">07972 089 013</a>
+      <a href="contact.html" class="btn-primary">Send an Enquiry</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="display:inline-flex;">
+          <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+            <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+            <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+            <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+            <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+            <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+            <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+          </svg>
+          <div class="logo-text-wrap"><span class="logo-ultra">ULTRA</span><span class="logo-fab">FABRICATION</span></div>
+        </a>
+        <p class="footer-about-text">Yorkshire-based steel fabrication specialists delivering structural steel, expert welding and bespoke metalwork across York and the North of England.</p>
+      </div>
+      <div>
+        <p class="footer-col-head">Navigate</p>
+        <ul class="footer-col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="areas-we-serve.html">Areas We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Areas We Serve</p>
+        <ul class="footer-col-links">
+          <li><a href="areas-we-serve.html">All Areas</a></li>
+          <li><a href="steel-fabrication-york.html">York</a></li>
+          <li><a href="steel-fabrication-selby.html">Selby</a></li>
+          <li><a href="steel-fabrication-tadcaster.html">Tadcaster</a></li>
+          <li><a href="steel-fabrication-harrogate.html">Harrogate</a></li>
+          <li><a href="steel-fabrication-pocklington.html">Pocklington</a></li>
+          <li><a href="steel-fabrication-wetherby.html">Wetherby</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Contact</p>
+        <ul class="footer-col-links">
+          <li><strong style="color:var(--steel-light);font-family:'Rajdhani',sans-serif;letter-spacing:0.1em;">Ultra Fabrication</strong></li>
+          <li style="color:var(--muted);font-size:0.875rem;line-height:1.6;">Bell Farm Stead, Riccall Road,<br>Escrick, York YO19 6ED</li>
+          <li><a href="tel:07972089013">07972 089 013</a></li>
+          <li><a href="tel:01904891404">01904 891 404</a></li>
+          <li><a href="mailto:ultra-fabrication@outlook.com">ultra-fabrication@outlook.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Ultra Fabrication</span>. All rights reserved.</p>
+      <a href="https://instagram.com/ultrafabrication" class="footer-ig" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
