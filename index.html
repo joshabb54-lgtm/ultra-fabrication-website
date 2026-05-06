@@ -304,6 +304,29 @@
 
     .btn-outline:hover { border-color: var(--blue); color: var(--blue-bright); transform: translateY(-2px); }
 
+    .btn-accred {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      padding: 14px 28px;
+      text-decoration: none;
+      border: 1px solid rgba(74,143,196,0.35);
+      background: rgba(74,143,196,0.07);
+      clip-path: polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+      transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-accred:hover {
+      background: rgba(74,143,196,0.15);
+      border-color: var(--blue-bright);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
     .hero-phone {
       margin-top: 2.5rem;
       display: flex;
@@ -1163,7 +1186,8 @@
     <p class="hero-sub">From structural steel beams to bespoke metalwork and specialist welding, Ultra Fabrication delivers quality craftsmanship and reliable service across Yorkshire and the North of England.</p>
     <div class="hero-btns">
       <a href="contact.html" class="btn-primary">Request a Quote</a>
-      <a href="services.html" class="btn-outline">Steel Beams, Welding &amp; Metal Work</a>
+      <a href="services.html" class="btn-outline">Our Services</a>
+      <a href="accreditations.html" class="btn-accred">EN 1090 EXC 2 Certified &#10003;</a>
     </div>
     <div class="hero-phone">
       Call Ryan direct &nbsp;
