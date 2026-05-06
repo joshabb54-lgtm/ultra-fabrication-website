@@ -3,229 +3,42 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Areas We Serve | Steel Fabrication Across York and Yorkshire</title>
-  <meta name="description" content="Ultra Fabrication serve York, Selby, Tadcaster, Harrogate, Pocklington and Wetherby with steel beams, welding and metal work. Based in Escrick, York."/>
-    <link rel="canonical" href="https://www.ultrafabrication.co.uk/areas-we-serve"/>
+  <title>Areas We Serve | Steel Fabrication Across Yorkshire | Ultra Fabrication</title>
+  <meta name="description" content="Ultra Fabrication serve North Yorkshire, West Yorkshire, East Riding and South Yorkshire with steel beams, welding and metal work. Based in Escrick, York."/>
+  <link rel="canonical" href="https://www.ultrafabrication.co.uk/areas-we-serve"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Ultra Fabrication"/>
-  <meta property="og:title" content="Areas We Serve | Steel Fabrication Across York and Yorkshire"/>
-  <meta property="og:description" content="Ultra Fabrication serve York, Selby, Tadcaster, Harrogate, Pocklington and Wetherby with steel beams, welding and metal work. Based in Escrick, York."/>
-  <meta property="og:url" content="https://www.ultrafabrication.co.uk/areas-we-serve"/>
-  <meta property="og:locale" content="en_GB"/>
-  <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:title" content="Areas We Serve | Steel Fabrication Across York and Yorkshire"/>
-  <meta name="twitter:description" content="Ultra Fabrication serve York, Selby, Tadcaster, Harrogate, Pocklington and Wetherby with steel beams, welding and metal work. Based in Escrick, York."/>
+  <meta property="og:title" content="Areas We Serve | Steel Fabrication Across Yorkshire"/>
+  <meta property="og:description" content="Steel fabrication across North Yorkshire, West Yorkshire, East Riding and South Yorkshire. Based in Escrick, York."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css">
   <style>
-    .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: var(--border);
-      margin-top: 3rem;
-    }
-    .area-card {
-      background: var(--dark);
-      padding: 3rem 2.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-      text-decoration: none;
-      display: block;
-    }
-    .area-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--blue);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .area-card:hover { background: var(--panel); }
-    .area-card:hover::after { transform: scaleX(1); }
-    .area-num {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
-      color: var(--border-mid);
-      line-height: 1;
-      margin-bottom: 1rem;
-      transition: color 0.3s;
-    }
-    .area-card:hover .area-num { color: var(--blue-dim); }
-    .area-name {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-    .area-dist {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 0.8rem;
-    }
-    .area-desc { font-size: 0.875rem; line-height: 1.7; color: var(--muted); }
-    .area-arrow {
-      position: absolute;
-      bottom: 2rem; right: 2rem;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.2rem;
-      color: var(--muted);
-      transition: color 0.2s, transform 0.2s;
-    }
-    .area-card:hover .area-arrow { color: var(--blue); transform: translate(4px, -4px); }
-    .services-strip {
-      background: var(--dark);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .services-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2px;
-      background: var(--border);
-      margin-top: 3rem;
-    }
-    .svc-mini {
-      background: var(--panel);
-      padding: 1.8rem 1.5rem;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .svc-mini:hover { background: var(--dark); }
-    .svc-mini-name {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 0.3rem;
-    }
-    .svc-mini-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
-    @media (max-width: 900px) {
-      .areas-grid { grid-template-columns: 1fr 1fr; }
-      .services-mini-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
-      .areas-grid { grid-template-columns: 1fr; }
-      .services-mini-grid { grid-template-columns: 1fr; }
-    }
-  
-  /* ─── MOBILE HAMBURGER ─── */
-  .mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 600;
-    position: relative;
-  }
-
-  .mobile-menu-btn span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--steel-light);
-    transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s;
-  }
-
-  .mobile-menu-btn.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-    background: var(--blue);
-  }
-
-  .mobile-menu-btn.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .mobile-menu-btn.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-    background: var(--blue);
-  }
-
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 76px;
-    left: 0; right: 0;
-    background: rgba(0,0,0,0.97);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-    z-index: 490;
-    padding: 1rem 0 2rem;
-    transform: translateY(-10px);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  .mobile-menu.open {
-    display: block;
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .mobile-menu ul li {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .mobile-menu ul li a {
-    display: block;
-    padding: 1.1rem 2rem;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.2s, padding-left 0.2s;
-  }
-
-  .mobile-menu ul li a:hover {
-    color: var(--blue-bright);
-    padding-left: 2.5rem;
-  }
-
-  .mobile-menu ul li:last-child a {
-    color: var(--white);
-    background: var(--blue);
-    margin: 1.2rem 1.5rem 0;
-    padding: 0.9rem 2rem;
-    clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
-  }
-
-  .mobile-menu ul li:last-child a:hover {
-    background: var(--blue-bright);
-    padding-left: 2rem;
-  }
-
-  @media (max-width: 900px) {
-    .mobile-menu-btn { display: flex; }
-  }
-</style>
+    .county-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);margin-top:3rem; }
+    .county-card { background:var(--dark);padding:3rem 2.5rem;position:relative;overflow:hidden;transition:background .3s;text-decoration:none;display:block; }
+    .county-card::after { content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .4s ease; }
+    .county-card:hover { background:var(--panel); }
+    .county-card:hover::after { transform:scaleX(1); }
+    .county-name { font-family:'Rajdhani',sans-serif;font-weight:700;font-size:2rem;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem; }
+    .county-count { font-family:'Rajdhani',sans-serif;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem; }
+    .county-towns { display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem; }
+    .county-town-tag { font-family:'Rajdhani',sans-serif;font-size:.72rem;letter-spacing:.1em;background:var(--border);padding:.3rem .7rem;color:var(--muted); }
+    .county-cta { font-family:'Rajdhani',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue); }
+    .county-arrow { position:absolute;top:2rem;right:2rem;font-size:1.5rem;color:var(--border-mid);transition:color .2s,transform .2s; }
+    .county-card:hover .county-arrow { color:var(--blue);transform:translate(4px,-4px); }
+    .mobile-menu-btn { display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;z-index:600;position:relative; }
+    .mobile-menu-btn span { display:block;width:24px;height:2px;background:var(--steel-light);transition:transform .3s ease,opacity .3s ease; }
+    .mobile-menu-btn.open span:nth-child(1) { transform:translateY(7px) rotate(45deg);background:var(--blue); }
+    .mobile-menu-btn.open span:nth-child(2) { opacity:0; }
+    .mobile-menu-btn.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg);background:var(--blue); }
+    .mobile-menu { display:none;position:fixed;top:76px;left:0;right:0;background:rgba(0,0,0,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:490;padding:1rem 0 2rem; }
+    .mobile-menu.open { display:block; }
+    .mobile-menu ul { list-style:none;padding:0;margin:0; }
+    .mobile-menu ul li { border-bottom:1px solid var(--border); }
+    .mobile-menu ul li a { display:block;padding:1.1rem 2rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text);text-decoration:none; }
+    .mobile-menu ul li:last-child a { color:var(--white);background:var(--blue);margin:1.2rem 1.5rem 0;padding:.9rem 2rem;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); }
+    @media (max-width:900px) { .county-grid { grid-template-columns:1fr; } .mobile-menu-btn { display:flex; } }
+  </style>
 </head>
 <body>
 <header id="hdr">
@@ -252,7 +65,6 @@
     </ul>
     <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></div>
   </nav>
-  <!-- Mobile menu overlay -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
@@ -271,86 +83,51 @@
   <div class="page-hero-inner">
     <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Areas We Serve</div>
     <h1 class="page-h1">Areas We <span>Serve</span></h1>
-    <p class="page-sub">Based in Escrick, York, we cover a wide area across Yorkshire and the North of England. Select your area below to find out more about how we can help with your steel project.</p>
+    <p class="page-sub">Ultra Fabrication cover the whole of Yorkshire from our workshop in Escrick, just south of York. Select your county below to find your nearest area page.</p>
   </div>
 </div>
 
 <div>
   <div class="section-wrap">
     <p class="eyebrow reveal">Coverage</p>
-    <h2 class="section-h2 reveal d1">Steel Fabrication Across<br>York and Yorkshire</h2>
-    <p class="reveal d2" style="font-size:0.95rem;line-height:1.8;color:var(--text);max-width:700px;">Our workshop is at Bell Farm Stead, Escrick, York YO19 6ED. From here we serve a wide area across Yorkshire and the North of England, covering both residential and commercial steel fabrication projects. Click on your area below to find out more.</p>
-    <div class="areas-grid">
-      <a href="steel-fabrication-york.html" class="area-card reveal">
-        <div class="area-num">01</div>
-        <div class="area-name">York</div>
-        <div class="area-dist">~6 miles from workshop</div>
-        <p class="area-desc">Our primary service area. We cover all of York including the city centre, inner suburbs and surrounding villages.</p>
-        <span class="area-arrow">&#8599;</span>
+    <h2 class="section-h2 reveal d1">Steel Fabrication Across<br>All of Yorkshire</h2>
+    <p class="reveal d2" style="font-size:.95rem;line-height:1.8;color:var(--text);max-width:700px;">We cover all four Yorkshire counties with a full range of steel fabrication services. Click your county to see which towns and areas we serve.</p>
+    <div class="county-grid">
+      <a href="steel-fabrication-north-yorkshire.html" class="county-card reveal">
+        <span class="county-arrow">&#8599;</span>
+        <div class="county-name">North Yorkshire</div>
+        <div class="county-count">10 Areas Covered</div>
+        <div class="county-towns">
+          <span class="county-town-tag">York</span><span class="county-town-tag">Harrogate</span><span class="county-town-tag">Scarborough</span><span class="county-town-tag">Whitby</span><span class="county-town-tag">Ripon</span><span class="county-town-tag">Northallerton</span><span class="county-town-tag">Selby</span><span class="county-town-tag">Malton</span><span class="county-town-tag">Thirsk</span><span class="county-town-tag">Tadcaster</span>
+        </div>
+        <span class="county-cta">View North Yorkshire Areas &rarr;</span>
       </a>
-      <a href="steel-fabrication-selby.html" class="area-card reveal d1">
-        <div class="area-num">02</div>
-        <div class="area-name">Selby</div>
-        <div class="area-dist">~10 miles from workshop</div>
-        <p class="area-desc">Structural steel and metalwork for Selby and the surrounding Vale of York including residential, commercial and agricultural projects.</p>
-        <span class="area-arrow">&#8599;</span>
+      <a href="steel-fabrication-west-yorkshire.html" class="county-card reveal d1">
+        <span class="county-arrow">&#8599;</span>
+        <div class="county-name">West Yorkshire</div>
+        <div class="county-count">7 Areas Covered</div>
+        <div class="county-towns">
+          <span class="county-town-tag">Leeds</span><span class="county-town-tag">Bradford</span><span class="county-town-tag">Huddersfield</span><span class="county-town-tag">Halifax</span><span class="county-town-tag">Wakefield</span><span class="county-town-tag">Dewsbury</span><span class="county-town-tag">Wetherby</span>
+        </div>
+        <span class="county-cta">View West Yorkshire Areas &rarr;</span>
       </a>
-      <a href="steel-fabrication-tadcaster.html" class="area-card reveal d2">
-        <div class="area-num">03</div>
-        <div class="area-name">Tadcaster</div>
-        <div class="area-dist">~15 miles from workshop</div>
-        <p class="area-desc">Steel beams, welding and metal work for Tadcaster and the Wharfe Valley including surrounding villages.</p>
-        <span class="area-arrow">&#8599;</span>
+      <a href="steel-fabrication-east-riding.html" class="county-card reveal d2">
+        <span class="county-arrow">&#8599;</span>
+        <div class="county-name">East Riding of Yorkshire</div>
+        <div class="county-count">7 Areas Covered</div>
+        <div class="county-towns">
+          <span class="county-town-tag">Hull</span><span class="county-town-tag">Beverley</span><span class="county-town-tag">Bridlington</span><span class="county-town-tag">Goole</span><span class="county-town-tag">Driffield</span><span class="county-town-tag">Hornsea</span><span class="county-town-tag">Pocklington</span>
+        </div>
+        <span class="county-cta">View East Riding Areas &rarr;</span>
       </a>
-      <a href="steel-fabrication-harrogate.html" class="area-card reveal">
-        <div class="area-num">04</div>
-        <div class="area-name">Harrogate</div>
-        <div class="area-dist">~22 miles from workshop</div>
-        <p class="area-desc">Premium steel fabrication for Harrogate, Knaresborough and Ripon. Specialist in bespoke metalwork for high-value properties.</p>
-        <span class="area-arrow">&#8599;</span>
-      </a>
-      <a href="steel-fabrication-pocklington.html" class="area-card reveal d1">
-        <div class="area-num">05</div>
-        <div class="area-name">Pocklington</div>
-        <div class="area-dist">~16 miles from workshop</div>
-        <p class="area-desc">Covering Pocklington, Market Weighton and the East Yorkshire Wolds for residential, commercial and agricultural steel work.</p>
-        <span class="area-arrow">&#8599;</span>
-      </a>
-      <a href="steel-fabrication-wetherby.html" class="area-card reveal d2">
-        <div class="area-num">06</div>
-        <div class="area-name">Wetherby</div>
-        <div class="area-dist">~20 miles from workshop</div>
-        <p class="area-desc">Serving Wetherby, Boston Spa and Collingham along the A1 corridor between York and Leeds.</p>
-        <span class="area-arrow">&#8599;</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="services-strip">
-  <div class="section-wrap">
-    <p class="eyebrow reveal">What We Offer</p>
-    <h2 class="section-h2 reveal d1">Services Available<br>Across All Areas</h2>
-    <div class="services-mini-grid">
-      <a href="steel-beams-york.html" class="svc-mini reveal">
-        <div class="svc-mini-name">Steel Beams</div>
-        <p class="svc-mini-desc">Supply and installation of structural beams and lintels across Yorkshire.</p>
-      </a>
-      <a href="welding-york.html" class="svc-mini reveal d1">
-        <div class="svc-mini-name">Welding</div>
-        <p class="svc-mini-desc">MIG and MMA welding by a fully coded welder. Mobile and workshop service.</p>
-      </a>
-      <a href="metal-work-installation-york.html" class="svc-mini reveal d2">
-        <div class="svc-mini-name">Metal Work</div>
-        <p class="svc-mini-desc">Cutting, drilling, painting, shot blasting and full on-site installation.</p>
-      </a>
-      <a href="structural-steel-york.html" class="svc-mini reveal d3">
-        <div class="svc-mini-name">Structural Steel</div>
-        <p class="svc-mini-desc">Mezzanine floors, platforms, access stairs, fencing and frames.</p>
-      </a>
-      <a href="bespoke-steel-fabrication-york.html" class="svc-mini reveal d4">
-        <div class="svc-mini-name">Bespoke</div>
-        <p class="svc-mini-desc">Non-standard and architectural steel fabrication. Curved beams and custom designs.</p>
+      <a href="steel-fabrication-south-yorkshire.html" class="county-card reveal d3">
+        <span class="county-arrow">&#8599;</span>
+        <div class="county-name">South Yorkshire</div>
+        <div class="county-count">6 Areas Covered</div>
+        <div class="county-towns">
+          <span class="county-town-tag">Sheffield</span><span class="county-town-tag">Doncaster</span><span class="county-town-tag">Rotherham</span><span class="county-town-tag">Barnsley</span><span class="county-town-tag">Mexborough</span><span class="county-town-tag">Worksop</span>
+        </div>
+        <span class="county-cta">View South Yorkshire Areas &rarr;</span>
       </a>
     </div>
   </div>
@@ -360,7 +137,7 @@
   <div class="cta-band-inner">
     <div>
       <h2 class="cta-title reveal">Not Sure If We<br><span>Cover Your Area?</span></h2>
-      <p class="cta-sub reveal d1">Call Ryan on 07972 089 013. If we can get to you, we will. We cover a wide area across Yorkshire and the North of England.</p>
+      <p class="cta-sub reveal d1">Call Ryan on 07972 089 013. If we can get to you, we will.</p>
     </div>
     <div class="cta-right reveal d2">
       <a href="tel:07972089013" class="cta-tel">07972 089 013</a>
@@ -385,29 +162,26 @@
           </svg>
           <div class="logo-text-wrap"><span class="logo-ultra">ULTRA</span><span class="logo-fab">FABRICATION</span></div>
         </a>
-        <p class="footer-about-text">Yorkshire-based steel fabrication specialists delivering structural steel, expert welding and bespoke metalwork across York and the North of England.</p>
+        <p class="footer-about-text">Yorkshire-based steel fabrication specialists delivering structural steel, expert welding and bespoke metalwork across all of Yorkshire.</p>
       </div>
       <div>
-        <p class="footer-col-head">Navigate</p>
+        <p class="footer-col-head">North Yorkshire</p>
         <ul class="footer-col-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="our-work.html">Our Work</a></li>
-          <li><a href="areas-we-serve.html">Areas We Serve</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="steel-fabrication-north-yorkshire.html">All North Yorkshire</a></li>
+          <li><a href="steel-fabrication-york.html">York</a></li>
+          <li><a href="steel-fabrication-harrogate.html">Harrogate</a></li>
+          <li><a href="steel-fabrication-scarborough.html">Scarborough</a></li>
+          <li><a href="steel-fabrication-whitby.html">Whitby</a></li>
         </ul>
       </div>
       <div>
-        <p class="footer-col-head">Areas We Serve</p>
+        <p class="footer-col-head">West &amp; South Yorkshire</p>
         <ul class="footer-col-links">
-          <li><a href="areas-we-serve.html">All Areas</a></li>
-          <li><a href="steel-fabrication-york.html">York</a></li>
-          <li><a href="steel-fabrication-selby.html">Selby</a></li>
-          <li><a href="steel-fabrication-tadcaster.html">Tadcaster</a></li>
-          <li><a href="steel-fabrication-harrogate.html">Harrogate</a></li>
-          <li><a href="steel-fabrication-pocklington.html">Pocklington</a></li>
-          <li><a href="steel-fabrication-wetherby.html">Wetherby</a></li>
+          <li><a href="steel-fabrication-west-yorkshire.html">All West Yorkshire</a></li>
+          <li><a href="steel-fabrication-leeds.html">Leeds</a></li>
+          <li><a href="steel-fabrication-bradford.html">Bradford</a></li>
+          <li><a href="steel-fabrication-south-yorkshire.html">All South Yorkshire</a></li>
+          <li><a href="steel-fabrication-sheffield.html">Sheffield</a></li>
         </ul>
       </div>
       <div>
@@ -435,27 +209,10 @@
   window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
   const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // Hamburger menu
   function toggleMenu() {
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn.classList.toggle('open');
-    menu.classList.toggle('open');
-
+    document.getElementById('menuBtn').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
   }
-
-  // Close menu on outside click
-  document.addEventListener('click', function(e) {
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    if (menu && menu.classList.contains('open') &&
-        !menu.contains(e.target) && !btn.contains(e.target)) {
-      btn.classList.remove('open');
-      menu.classList.remove('open');
-
-    }
-  });
 </script>
 </body>
 </html>

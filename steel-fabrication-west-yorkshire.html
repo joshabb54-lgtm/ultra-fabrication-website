@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steel Fabrication West Yorkshire | Ultra Fabrication</title>
+  <meta name="description" content="Steel fabrication across West Yorkshire including Leeds, Bradford, Huddersfield, Halifax, Wakefield, Dewsbury and Wetherby."/>
+  <link rel="canonical" href="https://www.ultrafabrication.co.uk/steel-fabrication-west-yorkshire"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Steel Fabrication West Yorkshire | Ultra Fabrication"/>
+  <meta property="og:description" content="Steel fabrication across West Yorkshire including Leeds, Bradford, Huddersfield, Halifax, Wakefield, Dewsbury and Wetherby."/>
+  <meta property="og:url" content="https://www.ultrafabrication.co.uk/steel-fabrication-west-yorkshire"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .areas-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:3rem; }
+    .area-card { background:var(--dark);padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background .3s;text-decoration:none;display:block; }
+    .area-card::after { content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .4s ease; }
+    .area-card:hover { background:var(--panel); }
+    .area-card:hover::after { transform:scaleX(1); }
+    .area-num { font-family:'Rajdhani',sans-serif;font-weight:700;font-size:3rem;color:var(--border-mid);line-height:1;margin-bottom:.8rem;transition:color .3s; }
+    .area-card:hover .area-num { color:var(--blue-dim); }
+    .area-name { font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:.3rem; }
+    .area-dist { font-family:'Rajdhani',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem; }
+    .area-arrow { position:absolute;bottom:1.5rem;right:1.5rem;font-size:1.2rem;color:var(--muted);transition:color .2s,transform .2s; }
+    .area-card:hover .area-arrow { color:var(--blue);transform:translate(4px,-4px); }
+    .mobile-menu-btn { display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;z-index:600;position:relative; }
+    .mobile-menu-btn span { display:block;width:24px;height:2px;background:var(--steel-light);transition:transform .3s ease,opacity .3s ease; }
+    .mobile-menu-btn.open span:nth-child(1) { transform:translateY(7px) rotate(45deg);background:var(--blue); }
+    .mobile-menu-btn.open span:nth-child(2) { opacity:0; }
+    .mobile-menu-btn.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg);background:var(--blue); }
+    .mobile-menu { display:none;position:fixed;top:76px;left:0;right:0;background:rgba(0,0,0,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:490;padding:1rem 0 2rem; }
+    .mobile-menu.open { display:block; }
+    .mobile-menu ul { list-style:none;padding:0;margin:0; }
+    .mobile-menu ul li { border-bottom:1px solid var(--border); }
+    .mobile-menu ul li a { display:block;padding:1.1rem 2rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text);text-decoration:none; }
+    .mobile-menu ul li:last-child a { color:var(--white);background:var(--blue);margin:1.2rem 1.5rem 0;padding:.9rem 2rem;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); }
+    @media (max-width:900px) { .areas-grid { grid-template-columns:1fr 1fr; } .mobile-menu-btn { display:flex; } }
+    @media (max-width:600px) { .areas-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<header id="hdr">
+  <nav>
+    <a href="index.html" class="logo-wrap"><svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+        <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+        <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+        <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+        <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+        <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <div class="logo-text-wrap"><span class="logo-ultra">ULTRA</span><span class="logo-fab">FABRICATION</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="areas-we-serve.html" class="active">Areas</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+      <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+      <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
+      <li><a href="our-work.html" onclick="toggleMenu()">Our Work</a></li>
+      <li><a href="areas-we-serve.html" onclick="toggleMenu()">Areas</a></li>
+      <li><a href="contact.html" onclick="toggleMenu()">Get a Quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-line"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="areas-we-serve.html">Areas</a><span>/</span>West Yorkshire</div>
+    <h1 class="page-h1">Steel Fabrication <span>West Yorkshire</span></h1>
+    <p class="page-sub">West Yorkshire is the most populous part of Yorkshire, home to Leeds, Bradford, Huddersfield and a network of towns and cities with significant construction and industrial markets. Ultra Fabrication serve the whole of West Yorkshire from our Escrick workshop.</p>
+  </div>
+</div>
+
+<div>
+  <div class="section-wrap">
+    <p class="eyebrow reveal">Coverage</p>
+    <h2 class="section-h2 reveal d1">Areas We Cover in<br>West Yorkshire</h2>
+    <p class="reveal d2" style="font-size:.95rem;line-height:1.8;color:var(--text);max-width:700px;margin-bottom:1rem;">Select your area below for full details on our services and response times from our Escrick workshop.</p>
+    <div class="areas-grid">
+      <a href="steel-fabrication-leeds.html" class="area-card reveal" style="">
+        <div class="area-num">01</div>
+        <div class="area-name">Leeds</div>
+        <div class="area-dist">~24 miles from workshop</div>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-bradford.html" class="area-card reveal" style="transition-delay:0.08s">
+        <div class="area-num">02</div>
+        <div class="area-name">Bradford</div>
+        <div class="area-dist">~35 miles from workshop</div>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-huddersfield.html" class="area-card reveal" style="transition-delay:0.16s">
+        <div class="area-num">03</div>
+        <div class="area-name">Huddersfield</div>
+        <div class="area-dist">~40 miles from workshop</div>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-halifax.html" class="area-card reveal" style="transition-delay:0.24s">
+        <div class="area-num">04</div>
+        <div class="area-name">Halifax</div>
+        <div class="area-dist">~42 miles from workshop</div>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-wakefield.html" class="area-card reveal" style="transition-delay:0.32s">
+        <div class="area-num">05</div>
+        <div class="area-name">Wakefield</div>
+        <div class="area-dist">~30 miles from workshop</div>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-dewsbury.html" class="area-card reveal" style="transition-delay:0.4s">
+        <div class="area-num">06</div>
+        <div class="area-name">Dewsbury</div>
+        <div class="area-dist">~38 miles from workshop</div>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+      <a href="steel-fabrication-wetherby.html" class="area-card reveal" style="transition-delay:0.48s">
+        <div class="area-num">07</div>
+        <div class="area-name">Wetherby</div>
+        <div class="area-dist">~20 miles from workshop</div>
+        <span class="area-arrow">&#8599;</span>
+      </a>
+    </div>
+
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
+      <p class="eyebrow reveal">Other Counties</p>
+      <p style="font-size:.9rem;color:var(--text);margin-bottom:1rem;" class="reveal d1">We also cover these Yorkshire counties:</p>
+      <ul style="list-style:none;display:flex;gap:1.5rem;flex-wrap:wrap;" class="reveal d2">
+        <li><a href="steel-fabrication-north-yorkshire.html" style="color:var(--blue);">North Yorkshire</a></li><li><a href="steel-fabrication-east-riding.html" style="color:var(--blue);">East Riding of Yorkshire</a></li><li><a href="steel-fabrication-south-yorkshire.html" style="color:var(--blue);">South Yorkshire</a></li>
+        <li><a href="areas-we-serve.html" style="color:var(--blue);">All Areas</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2 class="cta-title reveal">Steel Fabrication Across<br><span>West Yorkshire</span></h2>
+      <p class="cta-sub reveal d1">Call Ryan for a free quote on your West Yorkshire project. Fast response, competitive pricing.</p>
+    </div>
+    <div class="cta-right reveal d2">
+      <a href="tel:07972089013" class="cta-tel">07972 089 013</a>
+      <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="display:inline-flex;"><svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+        <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+        <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+        <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+        <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+        <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+          <div class="logo-text-wrap"><span class="logo-ultra">ULTRA</span><span class="logo-fab">FABRICATION</span></div>
+        </a>
+        <p class="footer-about-text">Yorkshire-based steel fabrication specialists delivering structural steel, expert welding and bespoke metalwork across Yorkshire and the North of England.</p>
+      </div>
+            <div>
+        <p class="footer-col-head">North Yorkshire</p>
+        <ul class="footer-col-links">
+          <li><a href="steel-fabrication-north-yorkshire.html">All Areas</a></li>
+          <li><a href="steel-fabrication-york.html">York</a></li>
+          <li><a href="steel-fabrication-harrogate.html">Harrogate</a></li>
+          <li><a href="steel-fabrication-tadcaster.html">Tadcaster</a></li>
+          <li><a href="steel-fabrication-selby.html">Selby</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">West Yorkshire</p>
+        <ul class="footer-col-links">
+          <li><a href="steel-fabrication-west-yorkshire.html">All Areas</a></li>
+          <li><a href="steel-fabrication-leeds.html">Leeds</a></li>
+          <li><a href="steel-fabrication-bradford.html">Bradford</a></li>
+          <li><a href="steel-fabrication-huddersfield.html">Huddersfield</a></li>
+          <li><a href="steel-fabrication-halifax.html">Halifax</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-head">Contact</p>
+        <ul class="footer-col-links"><li><strong style="color:var(--steel-light);font-family:'Rajdhani',sans-serif;letter-spacing:0.1em;">Ultra Fabrication</strong></li>
+          <li style="color:var(--muted);font-size:0.875rem;line-height:1.6;">Bell Farm Stead, Riccall Road,<br>Escrick, York YO19 6ED</li>
+          <li><a href="tel:07972089013">07972 089 013</a></li>
+          <li><a href="tel:01904891404">01904 891 404</a></li>
+          <li><a href="mailto:ultra-fabrication@outlook.com">ultra-fabrication@outlook.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Ultra Fabrication</span>. All rights reserved.</p>
+      <a href="https://instagram.com/ultrafabrication" class="footer-ig" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  function toggleMenu() {
+    document.getElementById('menuBtn').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
