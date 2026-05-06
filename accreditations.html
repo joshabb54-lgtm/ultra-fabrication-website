@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accreditations | EN 1090 EXC 2 Certified | Ultra Fabrication York</title>
+  <meta name="description" content="Ultra Fabrication hold EN 1090 EXC 2 UKCA certification for structural steel fabrication. Issued by Centre for Assessment. Based in Escrick, York."/>
+  <link rel="canonical" href="https://www.ultrafabrication.co.uk/accreditations"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Accreditations | EN 1090 EXC 2 Certified | Ultra Fabrication York"/>
+  <meta property="og:description" content="Ultra Fabrication hold EN 1090 EXC 2 UKCA certification for structural steel fabrication. Based in Escrick, York."/>
+  <meta property="og:url" content="https://www.ultrafabrication.co.uk/accreditations"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ─── ACCREDITATION CARD ─── */
+    .accred-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .accred-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+      margin-bottom: 2px;
+    }
+
+    .accred-info {
+      background: var(--dark);
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .accred-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(74,143,196,0.08);
+      border: 1px solid rgba(74,143,196,0.25);
+      padding: 7px 16px;
+      margin-bottom: 2rem;
+      clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+    }
+
+    .accred-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--blue);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .accred-standard {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .accred-standard span { color: var(--blue); }
+
+    .accred-subtitle {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: 2rem;
+    }
+
+    .accred-body {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .accred-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 2rem;
+    }
+
+    .accred-detail-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+
+    .accred-detail-row:first-child { border-top: 1px solid var(--border); }
+
+    .accred-detail-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .accred-detail-value {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+    }
+
+    .accred-detail-value.highlight { color: var(--blue-bright); }
+
+    /* Certificate image panel */
+    .accred-cert {
+      background: var(--panel);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .accred-cert::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(74,143,196,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cert-img-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .cert-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cert-verified-tag {
+      position: absolute;
+      bottom: -1px;
+      left: -1px;
+      right: -1px;
+      background: rgba(74,143,196,0.92);
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cert-verified-tag svg {
+      width: 18px; height: 18px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .cert-verified-text {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    /* What EN 1090 means section */
+    .explainer-section {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .explainer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+
+    .explainer-card {
+      background: var(--panel);
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .explainer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--blue);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .explainer-card:hover::before { opacity: 1; }
+
+    .explainer-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-dim);
+      border: 1px solid rgba(74,143,196,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);
+      margin-bottom: 1.5rem;
+    }
+
+    .explainer-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--blue-bright);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .explainer-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+
+    .explainer-text {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* More certs coming section */
+    .more-certs {
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .more-certs-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+    }
+
+    /* Mobile hamburger */
+    .mobile-menu-btn { display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;z-index:600;position:relative; }
+    .mobile-menu-btn span { display:block;width:24px;height:2px;background:var(--steel-light);transition:transform .3s ease,opacity .3s ease; }
+    .mobile-menu-btn.open span:nth-child(1) { transform:translateY(7px) rotate(45deg);background:var(--blue); }
+    .mobile-menu-btn.open span:nth-child(2) { opacity:0; }
+    .mobile-menu-btn.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg);background:var(--blue); }
+    .mobile-menu { display:none;position:fixed;top:76px;left:0;right:0;background:rgba(0,0,0,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:490;padding:1rem 0 2rem; }
+    .mobile-menu.open { display:block; }
+    .mobile-menu ul { list-style:none;padding:0;margin:0; }
+    .mobile-menu ul li { border-bottom:1px solid var(--border); }
+    .mobile-menu ul li a { display:block;padding:1.1rem 2rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text);text-decoration:none; }
+    .mobile-menu ul li:last-child a { color:var(--white);background:var(--blue);margin:1.2rem 1.5rem 0;padding:.9rem 2rem;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); }
+    @media (max-width:900px) { .mobile-menu-btn { display:flex; } }
+
+    @media (max-width: 900px) {
+      .accred-card { grid-template-columns: 1fr; }
+      .accred-info { padding: 2.5rem 1.5rem; order: 2; }
+      .accred-cert { padding: 2rem 1.5rem; order: 1; }
+      .explainer-grid { grid-template-columns: 1fr; }
+      .accred-detail-row { grid-template-columns: 140px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="hdr">
+  <nav>
+    <a href="index.html" class="logo-wrap">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+        <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+        <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+        <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+        <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+        <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <div class="logo-text-wrap"><span class="logo-ultra">ULTRA</span><span class="logo-fab">FABRICATION</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="areas-we-serve.html">Areas</a></li>
+      <li><a href="accreditations.html" class="active">Accreditations</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+      <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+      <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
+      <li><a href="our-work.html" onclick="toggleMenu()">Our Work</a></li>
+      <li><a href="areas-we-serve.html" onclick="toggleMenu()">Areas</a></li>
+      <li><a href="accreditations.html" onclick="toggleMenu()">Accreditations</a></li>
+      <li><a href="contact.html" onclick="toggleMenu()">Get a Quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-line"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Accreditations</div>
+    <h1 class="page-h1">Our <span>Accreditations</span></h1>
+    <p class="page-sub">Ultra Fabrication hold industry-leading certifications that demonstrate our commitment to quality, safety and compliance on every structural steel project we undertake.</p>
+  </div>
+</div>
+
+<!-- EN 1090 CERTIFICATE -->
+<div class="accred-section">
+  <div class="section-wrap" style="padding-bottom: 0;">
+    <p class="eyebrow reveal">Certification</p>
+    <h2 class="section-h2 reveal d1">Current Accreditations</h2>
+  </div>
+  <div style="max-width:1360px; margin: 2rem auto 0; padding: 0 2.5rem 6rem;">
+    <div class="accred-card reveal">
+      <div class="accred-info">
+        <div class="accred-badge">UKCA Certified — Active</div>
+        <div class="accred-standard">EN 1090<span>-1</span></div>
+        <div class="accred-subtitle">Execution Class EXC 2</div>
+        <p class="accred-body">
+          Ultra Fabrication hold a UKCA Certificate of Conformity of the Factory Production Control to EN 1090-1:2009+A1:2011, covering structures and structural components including load bearing and welded structural steel components to Execution Class 2.
+        </p>
+        <p class="accred-body">
+          This certification demonstrates that our factory production control system meets the highest standards required for structural steelwork in the UK and Europe. It is a mandatory requirement for supplying CE or UKCA marked structural steel to construction projects, and is increasingly required by specifiers, engineers and main contractors on commercial and public sector projects.
+        </p>
+        <div class="accred-details">
+          <div class="accred-detail-row">
+            <span class="accred-detail-label">Standard</span>
+            <span class="accred-detail-value">EN 1090-1:2009+A1:2011</span>
+          </div>
+          <div class="accred-detail-row">
+            <span class="accred-detail-label">Execution Class</span>
+            <span class="accred-detail-value highlight">Up to and including EXC 2</span>
+          </div>
+          <div class="accred-detail-row">
+            <span class="accred-detail-label">Certificate No.</span>
+            <span class="accred-detail-value">2551/CPR/26/0570</span>
+          </div>
+          <div class="accred-detail-row">
+            <span class="accred-detail-label">Approved Body</span>
+            <span class="accred-detail-value">Centre for Assessment (2551)</span>
+          </div>
+          <div class="accred-detail-row">
+            <span class="accred-detail-label">Issued</span>
+            <span class="accred-detail-value">22nd April 2026</span>
+          </div>
+          <div class="accred-detail-row">
+            <span class="accred-detail-label">Valid Until</span>
+            <span class="accred-detail-value highlight">21st April 2027</span>
+          </div>
+          <div class="accred-detail-row">
+            <span class="accred-detail-label">Scope</span>
+            <span class="accred-detail-value">Load bearing and welded structural steel components</span>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-primary" style="align-self: flex-start;">Enquire About a Project</a>
+      </div>
+      <div class="accred-cert">
+        <div class="cert-img-wrap">
+          <img src="certificate-en1090.jpg" alt="Ultra Fabrication EN 1090 EXC 2 UKCA Certificate of Conformity issued by Centre for Assessment" loading="lazy"/>
+          <div class="cert-verified-tag">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="cert-verified-text">UKCA Certificate — Centre for Assessment — Valid April 2027</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT EN 1090 MEANS -->
+<div class="explainer-section">
+  <div class="section-wrap">
+    <p class="eyebrow reveal">Why It Matters</p>
+    <h2 class="section-h2 reveal d1">What EN 1090 EXC 2<br>Means for Your Project</h2>
+    <p class="reveal d2" style="font-size:.95rem;line-height:1.8;color:var(--text);max-width:680px;">EN 1090 is the European standard for the execution of steel structures. Here is what our certification means in practice for clients commissioning structural steelwork.</p>
+    <div class="explainer-grid">
+      <div class="explainer-card reveal">
+        <div class="explainer-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="explainer-title">Legally Compliant Steelwork</div>
+        <p class="explainer-text">Under UK building regulations, structural steel components must carry UKCA marking. Our EN 1090 certification allows us to produce and issue declarations of performance, making our steelwork legally compliant for use in UK construction projects.</p>
+      </div>
+      <div class="explainer-card reveal d1">
+        <div class="explainer-icon">
+          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="explainer-title">Factory Production Control</div>
+        <p class="explainer-text">Our factory production control system has been independently audited and approved by the Centre for Assessment. Every stage of fabrication from materials to finished product is controlled, documented and traceable.</p>
+      </div>
+      <div class="explainer-card reveal d2">
+        <div class="explainer-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="explainer-title">Commercial and Public Sector Ready</div>
+        <p class="explainer-text">Many commercial developers, housing associations, local authorities and public sector bodies now require EN 1090 certification from their steel suppliers. Our EXC 2 certification covers the vast majority of structural steelwork applications.</p>
+      </div>
+      <div class="explainer-card reveal">
+        <div class="explainer-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="explainer-title">EXC 2 Coverage</div>
+        <p class="explainer-text">Execution Class 2 covers the majority of structural steel fabrication work including standard frames, beams, columns, connections and welded assemblies. It is the most commonly specified execution class for commercial and residential structural steelwork in the UK.</p>
+      </div>
+      <div class="explainer-card reveal d1">
+        <div class="explainer-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="explainer-title">Full Documentation</div>
+        <p class="explainer-text">We can provide full documentation with every structural steel order including the declaration of performance, material certificates and weld records. Everything your structural engineer or building control needs is available on request.</p>
+      </div>
+      <div class="explainer-card reveal d2">
+        <div class="explainer-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="explainer-title">Independently Audited</div>
+        <p class="explainer-text">This certification is not self-declared. It has been independently assessed and issued by the Centre for Assessment, an approved body (number 2551) under UKAS product certification. It is reviewed and renewed annually.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MORE CERTS PLACEHOLDER -->
+<div class="more-certs">
+  <div class="more-certs-inner">
+    <p class="eyebrow reveal" style="justify-content:center;">Coming Soon</p>
+    <h2 class="section-h2 reveal d1" style="text-align:center; font-size:clamp(1.5rem,3vw,2.5rem);">More Accreditations<br><span style="color:var(--blue);">Being Added</span></h2>
+    <p class="reveal d2" style="font-size:.95rem;line-height:1.8;color:var(--text);margin-top:1rem;">Additional certifications and accreditations will be displayed here as they are added. If you have a specific compliance requirement for your project, call Ryan and we will confirm whether we can meet it.</p>
+    <div class="reveal d3" style="margin-top:2rem;">
+      <a href="contact.html" class="btn-primary">Discuss Your Requirements</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2 class="cta-title reveal">EN 1090 EXC 2 Certified<br><span>Steel Fabrication in York</span></h2>
+      <p class="cta-sub reveal d1">Fully certified structural steelwork for residential, commercial and public sector projects. Call Ryan for a free quote.</p>
+    </div>
+    <div class="cta-right reveal d2">
+      <a href="tel:07972089013" class="cta-tel">07972 089 013</a>
+      <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="display:inline-flex;">
+          <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,6 94,86 6,86" fill="none" stroke="#2a2a35" stroke-width="1.5"/>
+            <polygon points="50,14 24,78 50,68" fill="#3a5a78" opacity="0.9"/>
+            <polygon points="50,14 76,78 50,68" fill="#5a8ab0" opacity="0.9"/>
+            <polygon points="24,78 50,68 38,78" fill="#2a4a64" opacity="0.9"/>
+            <polygon points="76,78 50,68 62,78" fill="#4a7aa0" opacity="0.9"/>
+            <line x1="50" y1="14" x2="24" y2="78" stroke="#6aabe0" stroke-width="1.5" opacity="0.6"/>
+            <line x1="50" y1="14" x2="76" y2="78" stroke="#a0b8cc" stroke-width="1.5" opacity="0.5"/>
+          </svg>
+          <div class="logo-text-wrap"><span class="logo-ultra">ULTRA</span><span class="logo-fab">FABRICATION</span></div>
+        </a>
+        <p class="footer-about-text">EN 1090 EXC 2 certified steel fabrication specialists based in York, Yorkshire. Structural steel, welding and bespoke metalwork across Yorkshire and the North of England.</p>
+      </div>
+      <div>
+        <p class="footer-col-head">Navigate</p>
+        <ul class="footer-col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="accreditations.html">Accreditations</a></li>
+          <li><a href="areas-we-serve.html">Areas We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Services</p>
+        <ul class="footer-col-links">
+          <li><a href="steel-beams-york.html">Steel Beams</a></li>
+          <li><a href="welding-york.html">Welding</a></li>
+          <li><a href="metal-work-installation-york.html">Metal Work</a></li>
+          <li><a href="structural-steel-york.html">Structural Steel</a></li>
+          <li><a href="bespoke-steel-fabrication-york.html">Bespoke Fabrication</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Contact</p>
+        <ul class="footer-col-links">
+          <li><strong style="color:var(--steel-light);font-family:'Rajdhani',sans-serif;letter-spacing:0.1em;">Ultra Fabrication</strong></li>
+          <li style="color:var(--muted);font-size:0.875rem;line-height:1.6;">Bell Farm Stead, Riccall Road,<br>Escrick, York YO19 6ED</li>
+          <li><a href="tel:07972089013">07972 089 013</a></li>
+          <li><a href="tel:01904891404">01904 891 404</a></li>
+          <li><a href="mailto:ultra-fabrication@outlook.com">ultra-fabrication@outlook.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Ultra Fabrication</span>. All rights reserved.</p>
+      <a href="https://instagram.com/ultrafabrication" class="footer-ig" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  function toggleMenu() {
+    document.getElementById('menuBtn').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
