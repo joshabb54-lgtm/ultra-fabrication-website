@@ -504,7 +504,10 @@
       <p class="eyebrow">Send an Enquiry</p>
       <h2 class="section-h2" style="font-size: 2rem;">Tell Us About<br>Your Project</h2>
     </div>
-    <form id="contact-form" action="mailto:ultra-fabrication@outlook.com" method="POST" enctype="text/plain">
+    <form id="contact-form" action="https://formspree.io/f/mdajgwrw" method="POST">
+      <input type="hidden" name="_subject" value="New Enquiry from Ultra Fabrication Website"/>
+      <input type="hidden" name="_replyto" value=""/>
+      <input type="text" name="_gotcha" style="display:none"/>
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" for="name">Name <span>*</span></label>
@@ -537,6 +540,9 @@
       </div>
       <button type="submit" class="form-submit">Send Enquiry</button>
       <p class="form-note">We typically respond within a few hours during business hours.<br>Alternatively, call Ryan directly on <a href="tel:07972089013" style="color: var(--blue);">07972 089 013</a></p>
+    <div id="form-success" style="display:none;background:rgba(74,143,196,0.1);border:1px solid rgba(74,143,196,0.3);padding:1.5rem;text-align:center;margin-top:1rem;">
+      <p style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.1em;color:var(--blue-bright);">Thanks! Your enquiry has been sent. Ryan will be in touch shortly.</p>
+    </div>
     </form>
   </div>
 
@@ -694,6 +700,36 @@
 </footer>
 
 <script>
+  // Formspree AJAX submission
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          btn.textContent = 'Send Enquiry';
+          btn.disabled = false;
+          alert('Something went wrong. Please call Ryan on 07972 089 013.');
+        }
+      } catch(err) {
+        btn.textContent = 'Send Enquiry';
+        btn.disabled = false;
+        alert('Something went wrong. Please call Ryan on 07972 089 013.');
+      }
+    });
+  }
+
   const hdr = document.getElementById('hdr');
   window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
   const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
