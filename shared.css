@@ -440,3 +440,24 @@ footer {
   .cta-right { align-items: flex-start; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
 }
+
+/* ─── WHATSAPP FLOAT ─── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.30);
+  z-index: 9999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
